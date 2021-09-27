@@ -14,6 +14,7 @@
 		43ECC55B270177DF00B77D7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43ECC55A270177DF00B77D7C /* Assets.xcassets */; };
 		43ECC55E270177DF00B77D7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43ECC55C270177DF00B77D7C /* LaunchScreen.storyboard */; };
 		43ECC5862702021A00B77D7C /* ToDoDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ECC5852702021A00B77D7C /* ToDoDetailTableViewController.swift */; };
+		43ECC58A2702157D00B77D7C /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ECC5892702157D00B77D7C /* ToDoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		43ECC55D270177DF00B77D7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43ECC55F270177DF00B77D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43ECC5852702021A00B77D7C /* ToDoDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailTableViewController.swift; sourceTree = "<group>"; };
+		43ECC5892702157D00B77D7C /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				43ECC551270177DD00B77D7C /* AppDelegate.swift */,
 				43ECC553270177DD00B77D7C /* SceneDelegate.swift */,
 				43ECC555270177DD00B77D7C /* ToDoListViewController.swift */,
+				43ECC5892702157D00B77D7C /* ToDoItem.swift */,
 				43ECC5852702021A00B77D7C /* ToDoDetailTableViewController.swift */,
 				43ECC557270177DD00B77D7C /* Main.storyboard */,
 				43ECC55A270177DF00B77D7C /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 			files = (
 				43ECC556270177DD00B77D7C /* ToDoListViewController.swift in Sources */,
 				43ECC552270177DD00B77D7C /* AppDelegate.swift in Sources */,
+				43ECC58A2702157D00B77D7C /* ToDoItem.swift in Sources */,
 				43ECC5862702021A00B77D7C /* ToDoDetailTableViewController.swift in Sources */,
 				43ECC554270177DD00B77D7C /* SceneDelegate.swift in Sources */,
 			);

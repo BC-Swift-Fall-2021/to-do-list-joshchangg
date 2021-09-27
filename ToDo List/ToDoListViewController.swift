@@ -10,6 +10,7 @@ import UIKit
 class ToDoListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var addBarButton: UIBarButtonItem!
     var toDoArray = ["Learn Swift", "Build Apps", "Change the World", "Take a Vacation"]
     
     override func viewDidLoad() {
@@ -45,6 +46,19 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
             tableView.scrollToRow(at: newIndexPath, at: .bottom, animated: true)
         }
     }
+
+
+    @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
+        if tableView.isEditing {
+            tableView.setEditing(false, animated: true)
+            sender.title = "Edit"
+            addBarButton.isEnabled = true
+        } else {
+            tableView.setEditing(true, animated: true)
+            sender.title = "Done"
+            addBarButton.isEnabled = false
+        }
+    }
 }
 extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -58,6 +72,18 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = toDoArray[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            toDoArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let itemToMove = toDoArray[sourceIndexPath.row]
+        toDoArray.insert(itemToMove, at: destinationIndexPath.row)
     }
 }
 

@@ -27,7 +27,7 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
         guard let data = try? Data(contentsOf: documentURL) else {return}
         let jsonDecoder = JSONDecoder()
         do {
-            toDoItems = try jsonDecoder.decode(Array<ToDOItems>.self, from: data)
+            toDoItems = try jsonDecoder.decode(Array<ToDoItems>.self, from: data)
             tableView.reloadData()
         } catch {
             print("ERROR Could not save data \(error.localizedDescription)")

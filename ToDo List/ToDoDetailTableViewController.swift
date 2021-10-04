@@ -33,8 +33,11 @@ class ToDoDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameField.delegate = self
+
         if toDoItem == nil {
             toDoItem = ToDoItem(name: "", date: Date().addingTimeInterval(24*60*60), notes: "", reminderSet: false, completed: false)
+            nameField.becomeFirstResponder()
         }
         updateUserInterface()
     }
@@ -82,5 +85,12 @@ extension ToDoDetailTableViewController {
         default:
             return defaultRowHeight
         }
+    }
+}
+
+extension ToDoDetailTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        noteView.becomeFirstResponder()
+        return true
     }
 }

@@ -114,7 +114,7 @@ class ToDoListViewController: UIViewController, UITableViewDelegate, UITableView
         if segue.identifier == "ShowDetail" {
             let destination = segue.destination as! ToDoDetailTableViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow
-            destination.toDoItem = toDoItems[selectedIndexPath.row]
+            destination.toDoItem = toDoItems[selectedIndexPath!.row]
         } else {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 tableView.deselectRow(at: selectedIndexPath, animated: true)
@@ -166,8 +166,7 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource, Li
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as! ListTableViewCell)
         cell.delegate = self
-        cell.nameLabel.text = toDoItems[indexPath.row].name
-        cell.checkBoxButton.isSelected = toDoItems[indexPath.row].completed
+        cell.toDoItem = toDoItems[indexPath.row]
         return cell
     }
     
@@ -183,7 +182,7 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource, Li
         let itemToMove = toDoItems[sourceIndexPath.row]
         toDoItems.remove(at: sourceIndexPath.row)
         toDoItems.insert(itemToMove, at: destinationIndexPath.row)
-    }
     saveData()
+    }
 }
 
